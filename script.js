@@ -1,3 +1,29 @@
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.querySelector('#main-nav');
+if (menuToggle && mainNav) {
+	const closeMenu = () => {
+		mainNav.classList.remove('menu-open');
+		menuToggle.setAttribute('aria-expanded', 'false');
+		menuToggle.setAttribute('aria-label', 'Open menu');
+	};
+	menuToggle.addEventListener('click', () => {
+		const open = mainNav.classList.toggle('menu-open');
+		menuToggle.setAttribute('aria-expanded', String(open));
+		menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+	});
+	document.addEventListener('click', (event) => {
+		if (!mainNav.contains(event.target)) closeMenu();
+	});
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape' && mainNav.classList.contains('menu-open')) {
+			closeMenu();
+			menuToggle.focus();
+		}
+	});
+	mainNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+	window.matchMedia('(max-width: 768px)').addEventListener('change', closeMenu);
+}
+
 document.querySelectorAll('[data-slider]').forEach((slider) => {
 	const slides = Array.from(slider.querySelectorAll('.slider-slide'));
 	const thumbs = Array.from(slider.querySelectorAll('.slider-thumb'));

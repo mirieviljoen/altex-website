@@ -1290,6 +1290,10 @@ nav a {
 /* ==========================================
    RESPONSIVE STYLES
    ========================================== */
+.menu-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .navbar {
     justify-content: center;
@@ -1605,8 +1609,47 @@ a.btn-grey {
   }
 
   .nav-links {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 100%;
+    padding: 12px;
+    background: var(--colour-navy);
+    border: 1px solid var(--colour-surface-grey);
+    border-radius: 6px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #main-nav {
+    position: relative;
+    justify-content: flex-end;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 8px 14px;
+    background: var(--colour-surface-grey);
+    color: var(--colour-white);
+    border: 1px solid var(--colour-text-grey);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  #main-nav.menu-open .nav-links {
+    display: flex;
   }
 
   .nav-links > a {
@@ -1614,12 +1657,74 @@ a.btn-grey {
     justify-content: center;
     text-align: center;
     padding: 8px 4px;
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     gap: 4px;
   }
 
   .nav-links > .quote-btn {
-    grid-column: span 2;
+    flex-basis: auto;
+  }
+
+  .project-intro-block {
+    padding: 20px 0;
+  }
+
+  .firepeak-hero {
+    gap: 16px;
+  }
+
+  .firepeak-hero::before {
+    background: none;
+  }
+
+  .firepeak-hero-visual {
+    display: block;
+    min-height: 0;
+  }
+
+  .firepeak-hero-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 30svh;
+    object-fit: contain;
+  }
+
+  .project-intro-block .page-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .hero-eyebrow,
+  .hero-subheading,
+  .hero-description {
+    margin-bottom: 12px;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .hero-feature-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .hero-feature-list li {
+    padding: 6px;
+    font-size: 0.6rem;
+    letter-spacing: 0.03em;
+  }
+
+  .hero-size-picker h3 {
+    margin: 8px 0;
+    font-size: 0.75rem;
+  }
+
+  .size-option {
+    padding: 10px 14px;
   }
 
   .hero {
