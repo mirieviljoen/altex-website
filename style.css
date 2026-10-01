@@ -1672,24 +1672,23 @@ a.btn-grey {
   }
 
   .firepeak-hero {
-    gap: 16px;
+    gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 12px 0;
   }
 
   .firepeak-hero::before {
-    background: none;
+    background:
+      linear-gradient(90deg, rgba(1, 1, 52, 0.85), rgba(1, 1, 52, 0.65) 50%, rgba(1, 1, 52, 0.2)),
+      url('Innovations/Project1_Altex FirePeak Range/FirePeak Range Hero.png') center right / contain no-repeat;
   }
 
   .firepeak-hero-visual {
-    display: block;
-    min-height: 0;
+    display: none;
   }
 
   .firepeak-hero-image {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 30svh;
-    object-fit: contain;
+    display: none;
   }
 
   .project-intro-block .page-title {
@@ -1709,7 +1708,7 @@ a.btn-grey {
   }
 
   .hero-feature-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 6px;
     margin-bottom: 8px;
   }
@@ -1718,6 +1717,23 @@ a.btn-grey {
     padding: 6px;
     font-size: 0.6rem;
     letter-spacing: 0.03em;
+    flex-wrap: wrap;
+  }
+
+  .stats-bar .grid {
+    justify-items: center;
+  }
+
+  .stat-item {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .footer-logo {
+    display: block;
+    margin: 20px auto 0;
   }
 
   .hero-size-picker h3 {
@@ -1779,6 +1795,25 @@ a.btn-grey {
   .form-row > * {
     flex: none;
     width: 100%;
+  }
+
+  .quote-form .form-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    min-width: 0;
+  }
+
+  .quote-form input,
+  .quote-form textarea,
+  .quote-form select {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   /* A 16px input font prevents automatic zoom when focusing fields on iOS. */
