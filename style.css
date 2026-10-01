@@ -1606,9 +1606,10 @@ a.btn-grey {
 @media (max-width: 768px) {
   .navbar {
     padding: 10px 0;
+    justify-content: flex-end;
   }
 
-  .nav-links {
+  #main-nav > .nav-links {
     display: none;
     position: absolute;
     top: calc(100% + 10px);
@@ -1630,6 +1631,7 @@ a.btn-grey {
 
   .menu-toggle {
     display: inline-flex;
+    margin-left: auto;
     align-items: center;
     gap: 10px;
     min-height: 44px;
@@ -1648,7 +1650,7 @@ a.btn-grey {
     line-height: 1;
   }
 
-  #main-nav.menu-open .nav-links {
+  #main-nav > .menu-toggle[aria-expanded="true"] + .nav-links {
     display: flex;
   }
 
