@@ -170,7 +170,7 @@ header {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(1, 1, 52, 0.7) 0%, rgba(1, 1, 52, 0.6) 26%, rgba(1, 1, 52, 0.35) 52%, rgba(1, 1, 52, 0.1) 100%),
-    url('Images/Website images/Project 1 - FirePeak Range/FirePeak Range Hero.png') center right / cover no-repeat;
+    url('Innovations/Project1_Altex FirePeak Range/FirePeak Range Hero.png') center right / cover no-repeat;
   opacity: 1;
   mix-blend-mode: screen;
   z-index: -2;
