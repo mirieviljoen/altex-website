@@ -1317,12 +1317,13 @@ nav a {
     padding: 32px 0;
   }
   .insider-hero-inner {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 24px;
     text-align: center;
   }
   .insider-hero-logo {
-    width: min(100%, 260px);
+    width: min(100%, 160px);
+    align-self: center;
   }
   .footer-grid {
     grid-template-columns: 1fr;
@@ -1331,7 +1332,7 @@ nav a {
     flex-direction: column;
   }
   .date-field {
-    flex: 1 1 0;
+    flex: none;
     width: 100%;
   }
   .bottom-flex {
@@ -1570,4 +1571,132 @@ a.btn-grey {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Keep grid/flex content within the viewport without hiding overflow. */
+.footer-col,
+.text-column,
+.product-details,
+.firepeak-hero-copy,
+.insider-hero-inner > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.footer-logo {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.slider-thumbs {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .nav-links > a {
+    min-height: 44px;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 0.65rem;
+    gap: 4px;
+  }
+
+  .nav-links > .quote-btn {
+    grid-column: span 2;
+  }
+
+  .hero {
+    min-height: 55svh;
+    padding: 40px 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-overlay {
+    background: rgba(4, 11, 20, 0.72);
+  }
+
+  .hero-text {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero .logo-blend-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  .insider-hero .page-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .insider-hero-blend-image {
+    right: 0;
+    width: 100%;
+    opacity: 0.25;
+  }
+
+  .page-content {
+    padding: 32px 0;
+  }
+
+  .content-block p {
+    margin-bottom: 28px;
+  }
+
+  .content-with-image {
+    gap: 28px;
+  }
+
+  .form-row > * {
+    flex: none;
+    width: 100%;
+  }
+
+  /* A 16px input font prevents automatic zoom when focusing fields on iOS. */
+  .quote-form input,
+  .quote-form textarea,
+  .quote-form select,
+  .date-field .flatpickr-input,
+  .date-field .flatpickr-alt-input {
+    font-size: 1rem;
+    min-height: 44px;
+  }
+
+  .product-card,
+  .product-dropdown-content {
+    padding: 16px;
+  }
+
+  .footer-bottom {
+    position: static;
+  }
+}
+
+@media (max-width: 380px) {
+  .grid-6,
+  .grid-4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
