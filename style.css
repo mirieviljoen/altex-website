@@ -170,7 +170,7 @@ header {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(1, 1, 52, 0.7) 0%, rgba(1, 1, 52, 0.6) 26%, rgba(1, 1, 52, 0.35) 52%, rgba(1, 1, 52, 0.1) 100%),
-    url('../../Images/Website images/Project 1 - FirePeak Range/FirePeak Range Hero.png') center right / cover no-repeat;
+    url('Images/Website images/Project 1 - FirePeak Range/FirePeak Range Hero.png') center right / cover no-repeat;
   opacity: 1;
   mix-blend-mode: screen;
   z-index: -2;
@@ -804,7 +804,7 @@ nav a {
   /* Multi-background: 1st layer fades the left edge of the image, 2nd layer renders the image uncropped */
   background: 
     linear-gradient(to right, var(--colour-dark-background) 0%, transparent 20%), 
-    url('../Images/Admin Images/cnc-machine.png') right /contain no-repeat;
+    url('Images/Admin Images/cnc-machine.png') right /contain no-repeat;
   background-color: var(--colour-dark-background);
   display: flex;
   align-items: center;
