@@ -6,6 +6,96 @@
     <title>About Us - ALTEX Innovations & Engineering</title>
     <link rel="stylesheet" href="../../style.css?v=20261001-mobile4">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      /* Keep the mobile image and content in one continuous hero. */
+      @media (max-width: 768px) {
+        .project-intro-block {
+          position: relative;
+          isolation: isolate;
+          overflow: hidden;
+          padding: 28px 0;
+        }
+
+        .project-intro-block::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          background:
+            linear-gradient(90deg, rgba(1, 1, 52, 0.92), rgba(1, 1, 52, 0.55) 65%, rgba(1, 1, 52, 0.3)),
+            linear-gradient(0deg, var(--colour-navy), transparent 30%),
+            url('FirePeak Range Hero.png') right center / cover no-repeat;
+        }
+
+        .project-intro-block .firepeak-hero {
+          display: block;
+          padding: 0;
+        }
+
+        .firepeak-hero::before {
+          content: none;
+        }
+
+        .firepeak-hero-copy {
+          gap: 0;
+        }
+
+        .project-intro-block .page-title {
+          font-size: clamp(2rem, 9vw, 3rem);
+          margin-bottom: 12px;
+        }
+
+        .hero-subheading {
+          max-width: 24ch;
+          font-size: 1.1rem;
+          line-height: 1.35;
+        }
+
+        .hero-description {
+          max-width: 34ch;
+          margin-bottom: 18px;
+        }
+
+        .hero-feature-list {
+          align-items: stretch;
+          gap: 6px;
+        }
+
+        .hero-feature-list li {
+          flex-direction: column;
+          flex-wrap: nowrap;
+          align-items: flex-start;
+          padding: 8px;
+          gap: 5px;
+          min-width: 0;
+          color: var(--colour-white);
+          background: rgba(1, 1, 52, 0.72);
+          border-color: rgba(255, 255, 255, 0.3);
+          font-size: 0.6rem;
+          line-height: 1.35;
+        }
+
+        .hero-feature-list .feature-icon {
+          color: #00a7ff;
+          width: 18px;
+          height: 18px;
+        }
+
+        .hero-size-picker {
+          margin-top: 10px;
+        }
+
+        .hero-size-picker h3 {
+          line-height: 1.5;
+          letter-spacing: 0.1em;
+          margin: 0 0 10px;
+        }
+
+        .size-option {
+          min-height: 44px;
+        }
+      }
+    </style>
 </head>
 <body>
         <!-- Shared Navigation -->
