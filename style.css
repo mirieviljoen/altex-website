@@ -170,7 +170,7 @@ header {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(1, 1, 52, 0.7) 0%, rgba(1, 1, 52, 0.6) 26%, rgba(1, 1, 52, 0.35) 52%, rgba(1, 1, 52, 0.1) 100%),
-    url('Innovations/Project1_Altex FirePeak Range/FirePeak Range Hero.png') center right / cover no-repeat;
+    url('Innovations/FirePeak/FirePeak Range Hero.png') center right / cover no-repeat;
   opacity: 1;
   mix-blend-mode: screen;
   z-index: -2;
@@ -625,7 +625,7 @@ nav a {
 #main-nav {
   display: flex;
   align-items: center;
-  gap: 90px; /* BIGGER GAP: Space between DESIGN and REQUEST A QUOTE */
+  gap: 90px; /* BIGGER GAP: Space between nav links and REQUEST A QUOTE */
 }
 
 /* Links grouping */
@@ -950,25 +950,49 @@ nav a {
 .innovation-gallery {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 40px;
   margin-top: 30px;
 }
 
 .project-row {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 40px;
+}
+
+.project-row .project-buttons {
+  margin-top: 0;
 }
 
 .project-row-header {
-  margin: 0 0 10px;
-  color: var(--colour-white);
-  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin: 0;
+  color: #00a7ff;
+  font-size: 1.5rem;
+  line-height: 1;
   font-weight: 700;
-  padding: 10px 14px;
-  border-radius: 8px;
-  letter-spacing: 1.8px;
+  padding: 0 14px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.project-row-header::before,
+.project-row-header::after {
+  content: "";
+  flex: 1 1 0;
+  max-width: 220px;
+  height: 1px;
+}
+
+.project-row-header::before {
+  background: linear-gradient(90deg, rgba(49, 168, 255, 0), rgba(49, 168, 255, 1));
+}
+
+.project-row-header::after {
+  background: linear-gradient(90deg, rgba(49, 168, 255, 1), rgba(49, 168, 255, 0));
 }
 
 .project-buttons-two {
@@ -1680,7 +1704,7 @@ a.btn-grey {
   .firepeak-hero::before {
     background:
       linear-gradient(90deg, rgba(1, 1, 52, 0.85), rgba(1, 1, 52, 0.65) 50%, rgba(1, 1, 52, 0.2)),
-      url('Innovations/Project1_Altex FirePeak Range/FirePeak Range Hero.png') center right / contain no-repeat;
+      url('Innovations/FirePeak/FirePeak Range Hero.png') center right / contain no-repeat;
   }
 
   .firepeak-hero-visual {
