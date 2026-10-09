@@ -61,7 +61,7 @@
 
         <div class="form-row stacked">
           <label for="budget">Approx. Budget (optional)</label>
-          <input type="text" name="budget" id="budget" placeholder="e.g. ZAR 10 000">
+          <input type="text" name="budget" id="budget" inputmode="decimal" placeholder="e.g. ZAR 10 000">
         </div>
 
         <div class="form-row stacked">
@@ -74,7 +74,7 @@
             <input id="fileUpload" class="file-upload-input" type="file" name="attachments[]" multiple accept="image/*,application/pdf,application/zip">
             <label for="fileUpload" class="btn-outline file-upload-label"><i class="fa-solid fa-upload"></i> Upload files</label>
             <div class="file-list" aria-live="polite"></div>
-            <p class="small-note">Accepted: images, PDFs, ZIP. Max 20MB per file.</p>
+            <p class="small-note">Accepted: images, PDFs, ZIP. Max 20MB per file. Attach selected files manually in your email app.</p>
           </div>
         </div>
 
@@ -92,9 +92,9 @@
       <div class="footer-col">
         <h3>GET IN TOUCH</h3>
         <ul class="contact-info">
-          <li><i class="fa-solid fa-phone"></i> +27 82 884 1145</li>
-          <li><i class="fa-solid fa-envelope"></i> info.altexie@gmail.com</li>
-          <li><i class="fa-solid fa-location-dot"></i> 22 Webster str, Parkrand,<br> Boksburg, Gauteng, South Africa</li>
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+27820965435">+27 82 096 5435</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info.altexie@gmail.com">info.altexie@gmail.com</a></li>
+          <li><i class="fa-solid fa-location-dot"></i> <a href="https://www.google.com/maps/search/?api=1&amp;query=22+Webster+Street%2C+Parkrand%2C+Boksburg%2C+Gauteng%2C+South+Africa" target="_blank" rel="noopener noreferrer">22 Webster str, Parkrand,<br> Boksburg, Gauteng, South Africa</a></li>
           <li><i class="fa-regular fa-clock"></i> Mon - Fri: 07h00 - 16h00</li>
         </ul>
         <img src="../Altex logo - Dark.png" alt="ALTEX Logo" class="footer-logo">
@@ -153,6 +153,39 @@
         field.value = value;
       }
     });
+
+    const quoteForm = document.querySelector('.quote-form');
+    if (quoteForm) {
+      quoteForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(quoteForm);
+        const attachmentNames = formData.getAll('attachments[]')
+          .filter((file) => file instanceof File && file.name)
+          .map((file) => file.name);
+        const subject = `ALTEX Quote Request - ${formData.get('project_title')}`;
+        const body = [
+          'Quote Request',
+          '',
+          `Name: ${formData.get('name')}`,
+          `Email: ${formData.get('email')}`,
+          `Phone: ${formData.get('phone') || 'Not provided'}`,
+          `Company: ${formData.get('company') || 'Not provided'}`,
+          `Project: ${formData.get('project_title')}`,
+          `Quantity: ${formData.get('quantity') || 'Not specified'}`,
+          `Preferred completion date: ${formData.get('preferred_by') || 'Not specified'}`,
+          `Approximate budget: ${formData.get('budget') || 'Not specified'}`,
+          '',
+          `Project details: ${formData.get('details')}`,
+          '',
+          attachmentNames.length
+            ? `Files to attach manually: ${attachmentNames.join(', ')}`
+            : 'Attachments: None'
+        ].join('\n');
+
+        window.location.href = `mailto:info.altexie@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+    }
 
     // Initialize flatpickr calendar on preferred_by with minDate = today
     if (typeof flatpickr !== 'undefined') {

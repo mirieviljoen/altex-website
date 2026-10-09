@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order FirePeak - ALTEX</title>
+  <link rel="stylesheet" href="../style.css?v=20261001-mobile4">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="navbar container">
+      <nav id="main-nav" aria-label="Main navigation">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-links" aria-label="Open menu"><span aria-hidden="true">☰</span> MENU</button>
+        <div class="nav-links" id="navigation-links">
+          <a href="../index.html">HOME</a>
+          <a href="about.html">ABOUT US</a>
+          <a href="../Innovations/innovations.html" class="nav-link">INNOVATIONS</a>
+          <a href="engineering.html">ENGINEERING</a>
+          <a href="quote.html" class="btn-primary quote-btn">REQUEST A QUOTE</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-body-wrap">
+    <section class="insider-hero order-hero">
+      <img src="../Images/Admin Images/Quote Hero.png" alt="" class="insider-hero-blend-image quote-hero-image" aria-hidden="true">
+      <div class="container insider-hero-inner">
+        <img src="../Altex logo - Dark.png" alt="ALTEX Logo" class="insider-hero-logo">
+        <div>
+          <h1 class="page-title">FIREPEAK ORDER</h1>
+          <p class="lead-text">Your selected model is ready. Add your contact and delivery details to prepare the order email.</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="container page-content order-page-content">
+      <div class="order-layout">
+        <section class="order-form-panel" aria-labelledby="customer-details-heading">
+          <h2 id="customer-details-heading">CUSTOMER DETAILS</h2>
+          <form class="order-form" id="order-form">
+            <div class="order-form-row">
+              <label for="customer-name">Full name
+                <input id="customer-name" name="name" type="text" autocomplete="name" required>
+              </label>
+              <label for="customer-email">Email address
+                <input id="customer-email" name="email" type="email" autocomplete="email" required>
+              </label>
+            </div>
+
+            <label for="customer-phone">Phone number
+              <input id="customer-phone" name="phone" type="tel" autocomplete="tel">
+            </label>
+
+            <label for="delivery-address">Delivery address
+              <textarea id="delivery-address" name="delivery_address" autocomplete="street-address" required></textarea>
+            </label>
+
+            <label for="order-notes">Order notes <span>(optional)</span>
+              <textarea id="order-notes" name="notes"></textarea>
+            </label>
+
+            <button type="submit" class="btn-primary btn-full"><i class="fa-solid fa-envelope"></i> PREPARE ORDER EMAIL</button>
+            <p class="order-email-note">Your email app will open with these details ready to review and send.</p>
+          </form>
+        </section>
+
+        <aside class="order-summary" aria-labelledby="order-summary-heading">
+          <img class="order-summary-image" id="order-image" src="../Innovations/FirePeak/FirePeak750/Real-life FP750.png" alt="FirePeak fireplace">
+          <div class="order-summary-content">
+            <span class="order-summary-eyebrow">ALTEX INNOVATIONS</span>
+            <h2 id="order-summary-heading">FirePeak750 fireplace</h2>
+            <p class="order-summary-details" id="order-details"></p>
+            <div class="order-summary-lines">
+              <div class="order-summary-line">
+                <label for="order-quantity">Quantity</label>
+                <input id="order-quantity" name="quantity" type="number" min="1" step="1" value="1" form="order-form" aria-label="Order quantity">
+              </div>
+              <div class="order-summary-line">
+                <span>Unit price</span>
+                <span id="unit-price">R4 999</span>
+              </div>
+              <div class="order-summary-line">
+                <span>Estimated delivery</span>
+                <span id="delivery-cost">R500</span>
+              </div>
+              <div class="order-summary-line order-summary-total">
+                <span>Estimated total</span>
+                <span id="order-total" aria-live="polite">R5 499</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>GET IN TOUCH</h3>
+        <ul class="contact-info">
+          <li><i class="fa-solid fa-phone"></i> <a href="tel:+27820965435">+27 82 096 5435</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:info.altexie@gmail.com">info.altexie@gmail.com</a></li>
+          <li><i class="fa-solid fa-location-dot"></i> <a href="https://www.google.com/maps/search/?api=1&amp;query=22+Webster+Street%2C+Parkrand%2C+Boksburg%2C+Gauteng%2C+South+Africa" target="_blank" rel="noopener noreferrer">22 Webster str, Parkrand,<br> Boksburg, Gauteng, South Africa</a></li>
+          <li><i class="fa-regular fa-clock"></i> Mon - Fri: 07h00 - 16h00</li>
+        </ul>
+        <img src="../Altex logo - Dark.png" alt="ALTEX Logo" class="footer-logo">
+      </div>
+      <div class="footer-col">
+        <h3>CONTACT US</h3>
+        <p class="form-subtext">For quotes and project enquiries, please use our dedicated quote page.</p>
+        <a href="quote.html" class="btn-primary btn-full">REQUEST A QUOTE &gt;</a>
+      </div>
+      <div class="footer-col">
+        <h3>WHY CHOOSE ALTEX?</h3>
+        <ul class="benefits-list">
+          <li><i class="fa-solid fa-check"></i> Precision engineering you can trust</li>
+          <li><i class="fa-solid fa-check"></i> Innovative solutions for every challenge</li>
+          <li><i class="fa-solid fa-check"></i> Quality materials &amp; craftsmanship</li>
+          <li><i class="fa-solid fa-check"></i> Commitment to safety &amp; compliance</li>
+          <li><i class="fa-solid fa-check"></i> Built to deliver performance</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container bottom-flex">
+        <p>&copy; 2026 Altex Innovations &amp; Engineering (Pty) Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const orderParams = new URLSearchParams(window.location.search);
+    const productTitle = orderParams.get('project_title') || 'FirePeak750 fireplace';
+    const productDetails = orderParams.get('details') || 'FirePeak wood-burning fireplace for indoor use.';
+    const unitPriceLabel = orderParams.get('budget') || 'R4 999';
+    const unitPrice = Number(unitPriceLabel.replace(/[^\d.]/g, '')) || 0;
+    const hasKnownPrice = unitPrice > 0;
+    const deliveryCost = 500;
+    const orderQuantity = document.getElementById('order-quantity');
+    const orderForm = document.getElementById('order-form');
+    const priceFormatter = new Intl.NumberFormat('en-ZA', { maximumFractionDigits: 0 });
+    const productModel = productTitle.match(/fire(peak|post|stack)\s*(750|1000)/i);
+    const productFamily = productModel?.[1].toLowerCase() || 'peak';
+    const productSize = productModel?.[2] || '750';
+    const productImages = {
+      peak: {
+        '750': '../Innovations/FirePeak/FirePeak750/Real-life FP750.png',
+        '1000': '../Innovations/FirePeak/FirePeak1000/Real-life FP1000.png'
+      },
+      post: {
+        '750': '../Innovations/FirePost/FirePost750/RL FirePost750.png',
+        '1000': '../Innovations/FirePost/FirePost1000/RL FirePost1000.png'
+      },
+      stack: {
+        '750': '../Innovations/FireStack/FireStack750/RL FireStack750.png',
+        '1000': '../Innovations/FireStack/FireStack Range Hero.png'
+      }
+    };
+    const modelImage = productImages[productFamily][productSize];
+
+    document.title = `Order ${productTitle} - ALTEX`;
+    document.getElementById('order-summary-heading').textContent = productTitle;
+    document.getElementById('order-details').textContent = productDetails;
+    document.getElementById('unit-price').textContent = unitPriceLabel;
+    document.getElementById('order-image').src = modelImage;
+    document.getElementById('order-image').alt = `${productTitle} fireplace`;
+    orderQuantity.value = Math.max(1, Number.parseInt(orderParams.get('quantity'), 10) || 1);
+
+    function updateOrderTotal() {
+      const quantity = Math.max(1, Number.parseInt(orderQuantity.value, 10) || 1);
+      orderQuantity.value = quantity;
+      document.getElementById('order-total').textContent = hasKnownPrice
+        ? `R${priceFormatter.format(unitPrice * quantity + deliveryCost)}`
+        : 'Price on request';
+    }
+
+    orderQuantity.addEventListener('input', updateOrderTotal);
+    updateOrderTotal();
+
+    orderForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      updateOrderTotal();
+
+      const formData = new FormData(orderForm);
+      const quantity = Number.parseInt(orderQuantity.value, 10);
+      const subject = `ALTEX Order Request - ${productTitle}`;
+      const body = [
+        'FirePeak Order Request',
+        '',
+        `Product: ${productTitle}`,
+        `Quantity: ${quantity}`,
+        `Unit price: ${unitPriceLabel}`,
+        `Estimated delivery: R${priceFormatter.format(deliveryCost)}`,
+        `Estimated total: ${hasKnownPrice ? `R${priceFormatter.format(unitPrice * quantity + deliveryCost)}` : 'Price on request (plus estimated delivery)'}`,
+        `Product details: ${productDetails}`,
+        '',
+        `Name: ${formData.get('name')}`,
+        `Email: ${formData.get('email')}`,
+        `Phone: ${formData.get('phone') || 'Not provided'}`,
+        `Delivery address: ${formData.get('delivery_address')}`,
+        `Order notes: ${formData.get('notes') || 'None'}`
+      ].join('\n');
+
+      window.location.href = `mailto:info.altexie@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+  <script src="../script.js?v=20261001-mobile4"></script>
+</body>
+</html>

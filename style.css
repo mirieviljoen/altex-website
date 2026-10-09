@@ -1125,6 +1125,13 @@ nav a {
   gap: 10px;
 }
 
+.contact-info a,
+.contact-info a:visited,
+.contact-info a:hover,
+.contact-info a:focus {
+  color: var(--colour-white);
+}
+
 .contact-info i {
   background: linear-gradient(135deg, #0b6dff, #00a7ff);
   -webkit-background-clip: text;
@@ -1217,6 +1224,233 @@ nav a {
 }
 .quote-form input {
   line-height: 1.4;
+}
+
+/* FirePeak order request */
+.order-page-content {
+  padding: 48px 0 64px;
+}
+
+.insider-hero.order-hero {
+  padding: 20px 0;
+}
+
+.order-hero .insider-hero-logo {
+  width: min(100%, 76px);
+}
+
+.order-hero .page-title {
+  margin-bottom: 6px;
+  font-size: 1.8rem;
+}
+
+.order-hero .lead-text {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.order-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.75fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.order-form-panel {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 18px;
+  background: var(--colour-white);
+  border-top: 4px solid #00a7ff;
+  color: var(--colour-navy);
+}
+
+.order-summary {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 80%;
+  height: 500px;
+  margin-inline: auto;
+}
+
+.order-form-panel h2,
+.order-summary h2 {
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+}
+
+.order-form {
+  display: grid;
+  gap: 10px;
+}
+
+.order-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.order-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--colour-navy);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.order-form input,
+.order-form textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid #b8bdc8;
+  border-radius: 3px;
+  background: var(--colour-white);
+  color: var(--colour-black);
+  font-size: 1rem;
+}
+
+.order-form textarea {
+  min-height: 62px;
+  resize: vertical;
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+  outline: 2px solid #008ed6;
+  outline-offset: 1px;
+}
+
+.order-form .btn-primary {
+  min-height: 48px;
+  border: 0;
+  cursor: pointer;
+}
+
+.order-email-note {
+  color: #4a4d52;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.order-summary {
+  overflow: hidden;
+  background: #080d23;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--colour-white);
+}
+
+.order-summary-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--colour-surface-grey);
+}
+
+.order-summary-content {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 16px;
+}
+
+.order-summary-eyebrow {
+  color: #00a7ff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.order-summary h2 {
+  margin: 4px 0 8px;
+  font-size: 1.2rem;
+}
+
+.order-summary-details {
+  color: #d3d7e0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.order-summary-lines {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.order-summary-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.85rem;
+}
+
+.order-summary-total {
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.order-summary input[type="number"] {
+  width: 76px;
+  min-height: 38px;
+  padding: 6px 8px;
+  border: 1px solid #b8bdc8;
+  border-radius: 3px;
+  background: var(--colour-white);
+  color: var(--colour-black);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .order-page-content {
+    padding: 30px 0 40px;
+  }
+
+  .order-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .order-form-panel {
+    padding: 20px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .order-summary {
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    height: auto;
+    margin-inline: 0;
+  }
+
+  .order-summary-image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .order-summary-content {
+    width: 80%;
+    height: auto;
+    margin-inline: auto;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .order-form-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 /* Ensure flatpickr-generated inputs match other form inputs */
