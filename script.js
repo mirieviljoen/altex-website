@@ -1,11 +1,24 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const mainNav = document.querySelector('#main-nav');
 if (menuToggle && mainNav) {
+	const productsMenu = mainNav.querySelector('.nav-products');
+	const productsToggle = productsMenu?.querySelector('.nav-products-toggle');
+	const closeProductsMenu = () => {
+		productsMenu?.classList.remove('is-open');
+		productsToggle?.setAttribute('aria-expanded', 'false');
+	};
 	const closeMenu = () => {
 		mainNav.classList.remove('menu-open');
 		menuToggle.setAttribute('aria-expanded', 'false');
 		menuToggle.setAttribute('aria-label', 'Open menu');
+		closeProductsMenu();
 	};
+	productsToggle?.addEventListener('click', () => {
+		const open = productsToggle.getAttribute('aria-expanded') !== 'true';
+		productsMenu.classList.toggle('is-open', open);
+		productsToggle.setAttribute('aria-expanded', String(open));
+		productsToggle.setAttribute('aria-label', open ? 'Hide innovation products' : 'Show innovation products');
+	});
 	menuToggle.addEventListener('click', () => {
 		const open = mainNav.classList.toggle('menu-open');
 		menuToggle.setAttribute('aria-expanded', String(open));
@@ -18,6 +31,9 @@ if (menuToggle && mainNav) {
 		if (event.key === 'Escape' && mainNav.classList.contains('menu-open')) {
 			closeMenu();
 			menuToggle.focus();
+		} else if (event.key === 'Escape' && productsMenu?.classList.contains('is-open')) {
+			closeProductsMenu();
+			productsToggle.focus();
 		}
 	});
 	mainNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
